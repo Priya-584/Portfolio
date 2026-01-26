@@ -9,7 +9,7 @@ import ShinyText from "@/components/ui/ShinyText";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-background">
+        <section className="relative min-h-[90vh] flex items-center py-20 overflow-hidden bg-background">
             {/* Dynamic Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse" />
