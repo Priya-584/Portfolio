@@ -16,8 +16,8 @@ export const Hero = () => {
                 <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
             </div>
 
-            <Container className="relative z-10 flex flex-col md:flex-row items-center gap-12">
-                <div className="flex-1 space-y-8">
+            <Container className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div className="flex-1 space-y-6 md:space-y-8">
                     <SplitText
                         text={heroData.title}
                         className="text-5xl md:text-7xl font-bold tracking-wide text-foreground leading-[1] text-left opacity-0"
@@ -48,7 +48,7 @@ export const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-wrap gap-4"
+                        className="flex flex-wrap gap-3 md:gap-4"
                     >
                         <Button href="#work">{heroData.ctaPrimary}</Button>
                         <Button href={heroData.ctaSecondary} variant="outline" target="_blank" rel="noopener noreferrer">Download Resume</Button>

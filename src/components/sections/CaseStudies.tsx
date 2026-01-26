@@ -17,7 +17,7 @@ const AnimatedProjectCard = ({ study, index }: { study: typeof caseStudies[0]; i
     const initialVisualX = isEven ? 100 : -100;
 
     return (
-        <div className="flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-12 items-center mb-20 last:mb-0 overflow-hidden md:overflow-visible py-5">
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-12 items-center mb-16 md:mb-20 last:mb-0 overflow-hidden md:overflow-visible py-5">
             {/* 
                We will animate the Text Block and Image Block coming from opposite sides
                Card Index Even: Text Left, Image Right (Standard)

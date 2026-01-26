@@ -16,7 +16,7 @@ const TimelineItem = ({ step, index }: { step: typeof processData[0]; index: num
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className={`relative flex items-center justify-between md:justify-center w-full mb-12 last:mb-0 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
+            className={`relative flex items-center justify-between md:justify-center w-full mb-8 md:mb-12 last:mb-0 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
         >
             {/* Center Dot on Line */}
             <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-background border-4 border-primary rounded-full z-10 shadow-[0_0_0_4px_rgba(var(--background),1)]" />

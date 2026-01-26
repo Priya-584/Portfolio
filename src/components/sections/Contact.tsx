@@ -21,11 +21,11 @@ export const Contact = () => {
                         textAlign="center"
                     />
                 </div>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12 md:mb-16">
                     I am currently available for freelance projects and open to full-time opportunities.
                 </p>
 
-                <div className="flex justify-center gap-6">
+                <div className="flex justify-center gap-4 md:gap-6">
                     {socialsData.map((social) => (
                         <a
                             key={social.name}

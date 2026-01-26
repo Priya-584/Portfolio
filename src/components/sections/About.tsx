@@ -10,7 +10,7 @@ export const About = () => {
     return (
         <Section id="about" className="bg-background text-foreground">
             <Container>
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div className="space-y-6">
                         <h2 className="text-sm font-semibold tracking-widest text-purple-500 uppercase">
                             {aboutData.title}
@@ -28,7 +28,7 @@ export const About = () => {
                             {aboutData.philosophy}
                         </p>
 
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 pt-8">
                             {aboutData.stats.map((stat, index) => {
                                 const number = parseInt(stat.value);
                                 const suffix = stat.value.replace(number.toString(), "");

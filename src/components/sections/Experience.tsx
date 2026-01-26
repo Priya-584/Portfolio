@@ -56,13 +56,13 @@ export const Experience = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 md:mb-16"
                 >
                     <h2 className="text-sm font-semibold tracking-widest text-primary uppercase mb-3">Career Path</h2>
                     <p className="text-4xl font-bold text-foreground">Experience</p>
                 </motion.div>
 
-                <div className="space-y-8 md:space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/20 before:to-transparent">
+                <div className="space-y-10 md:space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/20 before:to-transparent">
                     {experienceData.slice().reverse().map((job, index) => (
                         <ExperienceCard key={job.id} job={job} index={index} />
                     ))}

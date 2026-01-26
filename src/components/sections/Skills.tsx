@@ -10,7 +10,7 @@ export const Skills = () => {
     return (
         <Section id="skills" className="bg-background">
             <Container>
-                <div className="mb-16">
+                <div className="mb-12 md:mb-16">
                     <h2 className="text-sm font-semibold tracking-widest text-purple-500 uppercase mb-3">Expertise</h2>
                     <SplitText
                         text="Tools & Methods"
@@ -22,7 +22,7 @@ export const Skills = () => {
                     />
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid md:grid-cols-3 gap-8 md:gap-8">
                     {skillsData.map((group, index) => (
                         <motion.div
                             key={index}
