@@ -19,11 +19,44 @@ const TimelineItem = ({ step, index }: { step: typeof processData[0]; index: num
             className={`relative flex items-center justify-between md:justify-center w-full mb-8 md:mb-12 last:mb-0 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
         >
             {/* Center Dot on Line */}
-            <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-background border-4 border-primary rounded-full z-10 shadow-[0_0_0_4px_rgba(var(--background),1)]" />
+            <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{
+                    scale: 1,
+                }}
+                animate={{
+                    boxShadow: [
+                        "0 0 0 4px hsl(var(--background))",
+                        "0 0 0 4px hsl(var(--background)), 0 0 0 8px hsl(var(--primary))",
+                        "0 0 0 4px hsl(var(--background))"
+                    ]
+                }}
+                viewport={{ margin: "-50px" }}
+                transition={{
+                    scale: { duration: 0.5 },
+                    boxShadow: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                }}
+                className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-background border-4 border-primary rounded-full z-10"
+            />
 
             {/* Content Side */}
             <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${isEven ? "md:mr-auto md:text-right" : "md:ml-auto md:text-left"}`}>
-                <div className={`p-6 rounded-2xl bg-secondary/5 border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group relative overflow-hidden`}>
+                <motion.div
+                    whileInView={{
+                        borderColor: ["rgba(var(--primary), 0.1)", "rgba(var(--primary), 0.5)", "rgba(var(--primary), 0.1)"],
+                        boxShadow: [
+                            "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                            "0 10px 30px -5px rgba(var(--primary), 0.15)",
+                            "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+                        ]
+                    }}
+                    transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className={`p-6 rounded-2xl bg-secondary/5 border border-primary/20 transition-all duration-300 group relative overflow-hidden`}
+                >
                     {/* Decorative Number Background: Fixed to right on mobile, alternating on desktop */}
                     <span className={`absolute -top-1 right-4 ${isEven ? "md:left-4 md:right-auto" : "md:right-4"} text-8xl font-bold text-foreground/5 pointer-events-none select-none`}>
                         0{index + 1}
@@ -43,7 +76,7 @@ const TimelineItem = ({ step, index }: { step: typeof processData[0]; index: num
                             tag="p"
                         />
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* Empty Side for Layout Balance (Desktop only) */}

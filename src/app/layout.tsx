@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Navbar />
           <ScrollProgress />
           {children}
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
