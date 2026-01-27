@@ -1,0 +1,72 @@
+.animated-gradient-text {
+  display: flex;
+  max-width: fit-content;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.25rem;
+  font-weight: 900;
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.5s ease-out;
+  overflow: visible; /* Changed from hidden to visible to prevent clipping */
+  cursor: pointer;
+  font-family: var(--font-heading), sans-serif; /* Use new font */
+  padding: 0.2rem; /* Add padding to prevent clipping */
+  letter-spacing: 0.05em; /* Reduce space between characters */
+}
+
+.animated-gradient-text.with-border {
+  padding: 0.35rem 0.75rem;
+  position: relative;
+  /* Ensure border radius is respected */
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+  background-size: 300% 100%;
+  animation: gradient-animation linear infinite;
+}
+
+.gradient-overlay::before {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--background); /* Use theme background */
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+.text-content {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 300% 100%;
+  color: transparent; /* Essential for background-clip */
+  animation: gradient-animation linear infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

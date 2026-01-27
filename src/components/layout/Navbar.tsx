@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { Button } from "@/components/ui/Button";
+import GradientText from "@/components/ui/GradientText";
 
 const navLinks = [
     { name: "About", href: "#about" },
@@ -33,8 +34,15 @@ export const Navbar = () => {
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border py-4 shadow-sm" : "bg-transparent py-6"}`}
         >
             <Container className="flex items-center justify-between">
-                <Link href="/" className="text-xl font-bold text-foreground tracking-tighter">
-                    PORTFOLIO.
+                <Link href="/" className="font-bold hover:opacity-80 transition-opacity">
+                    <GradientText
+                        colors={["#5227FF", "#FF9FFC", "#B19EEF", "#5227FF"]}
+                        animationSpeed={6}
+                        showBorder={false}
+                        className="text-xl md:text-2xl"
+                    >
+                        PORTFOLIO
+                    </GradientText>
                 </Link>
 
                 {/* Desktop Nav */}
