@@ -43,9 +43,10 @@ export const Navbar = () => {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                            className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
                         >
                             {link.name}
+                            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-300 ease-out group-hover:w-full" />
                         </Link>
                     ))}
                     <ThemeToggle />
