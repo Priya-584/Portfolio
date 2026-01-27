@@ -18,18 +18,18 @@ const logoDesigns = [
 ];
 
 const masonryItems = [
-    { id: "1", img: "/images/priya_1.jpeg", height: 400 },
-    { id: "2", img: "/images/priya_2.jpeg", height: 300 },
-    { id: "3", img: "/images/priya_6.png", height: 500 },
-    { id: "4", img: "/images/priya_7.png", height: 350 },
-    { id: "5", img: "/images/project1.jpg", height: 450 },
-    { id: "6", img: "/images/project2.jpg", height: 300 },
-    { id: "7", img: "/images/priya_3.jpeg", height: 400 },
-    { id: "8", img: "/images/priya_4.jpeg", height: 550 },
-    { id: "9", img: "/images/project3.jpg", height: 350 },
-    { id: "10", img: "/images/priya_5.jpeg", height: 300 },
-    { id: "11", img: "/images/NIFT.png", height: 400 },
-    { id: "12", img: "/images/dingDong.png", height: 350 },
+    { id: "v1", img: "/images/1.jpg", video: "/images/Techpyro Diwali vdo.mp4", height: 1000, span: 2 },
+    { id: "1", img: "/images/1.jpg", height: 400 },
+    { id: "2", img: "/images/2.jpg", height: 300 },
+    { id: "3", img: "/images/3.jpg", height: 500 },
+    { id: "4", img: "/images/4.jpg", height: 350 },
+    { id: "5", img: "/images/5.jpg", height: 450 },
+    { id: "6", img: "/images/6.jpg", height: 300 },
+    { id: "7", img: "/images/7.jpg", height: 400 },
+    { id: "8", img: "/images/8.jpg", height: 550 },
+    { id: "9", img: "/images/9.jpg", height: 350 },
+    { id: "10", img: "/images/10.jpg", height: 300 },
+    { id: "11", img: "/images/1.1.jpg", height: 400 },
 ];
 
 const posts = [

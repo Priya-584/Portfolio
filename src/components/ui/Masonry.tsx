@@ -6,14 +6,20 @@ import './Masonry.css';
 interface MasonryItem {
     id: string;
     img: string;
+    video?: string;
     url?: string;
     height: number;
-    width?: number; // Optional, calculated dynamically usually, but simplified here
+    width?: number;
+    span?: number; // New property: number of columns to span
     x?: number;
     y?: number;
     w?: number;
     h?: number;
 }
+// ... (keep middle code same) -> actually I need to be careful with replace_file_content limitations.
+// I will split this into two edits if needed, but the tool description says "multiple edits across a single file, use the multi_replace_file_content tool".
+// Let's use multi_replace_file_content for safety as I'm touching interface and render loop.
+
 
 interface MasonryProps {
     items: MasonryItem[];
@@ -142,14 +148,34 @@ const Masonry = ({
         const columnWidth = width / columns;
 
         return items.map(child => {
-            const col = colHeights.indexOf(Math.min(...colHeights));
-            const x = columnWidth * col;
+            const span = Math.min(child.span || 1, columns); // Cap span to total columns
+
+            // Find the best column to place this item
+            let bestCol = 0;
+            let minH = Infinity;
+
+            // Search for a column where the item fits (considering span)
+            // We want the column set with the minimal max-height
+            for (let i = 0; i <= columns - span; i++) {
+                // Calculate the max height of the columns we would span if we started at i
+                const maxSpanH = Math.max(...colHeights.slice(i, i + span));
+                if (maxSpanH < minH) {
+                    minH = maxSpanH;
+                    bestCol = i;
+                }
+            }
+
+            const x = columnWidth * bestCol;
+            const y = minH;
+            const w = columnWidth * span;
             const height = child.height / 2; // Assuming height is scaled here relative to width
-            const y = colHeights[col];
 
-            colHeights[col] += height;
+            // Update column heights for all spanned columns
+            for (let k = 0; k < span; k++) {
+                colHeights[bestCol + k] = y + height;
+            }
 
-            return { ...child, x, y, w: columnWidth, h: height };
+            return { ...child, x, y, w, h: height };
         });
     }, [columns, items, width]);
 
@@ -261,24 +287,53 @@ const Masonry = ({
                         onMouseEnter={e => handleMouseEnter(e, item)}
                         onMouseLeave={e => handleMouseLeave(e, item)}
                     >
-                        <div className="item-img" style={{ backgroundImage: `url(${item.img})` }}>
-                            {colorShiftOnHover && (
-                                <div
-                                    className="color-overlay"
-                                    style={{
-                                        position: 'absolute',
-                                        top: 0,
-                                        left: 0,
-                                        width: '100%',
-                                        height: '100%',
-                                        background: 'linear-gradient(45deg, rgba(255,0,150,0.5), rgba(0,150,255,0.5))',
-                                        opacity: 0,
-                                        pointerEvents: 'none',
-                                        borderRadius: '8px'
-                                    }}
+                        {item.video ? (
+                            <div className="item-img overflow-hidden relative">
+                                <video
+                                    src={item.video}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-full object-cover"
                                 />
-                            )}
-                        </div>
+                                {colorShiftOnHover && (
+                                    <div
+                                        className="color-overlay"
+                                        style={{
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: '100%',
+                                            height: '100%',
+                                            background: 'linear-gradient(45deg, rgba(255,0,150,0.5), rgba(0,150,255,0.5))',
+                                            opacity: 0,
+                                            pointerEvents: 'none',
+                                            borderRadius: '8px'
+                                        }}
+                                    />
+                                )}
+                            </div>
+                        ) : (
+                            <div className="item-img" style={{ backgroundImage: `url(${item.img})` }}>
+                                {colorShiftOnHover && (
+                                    <div
+                                        className="color-overlay"
+                                        style={{
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: '100%',
+                                            height: '100%',
+                                            background: 'linear-gradient(45deg, rgba(255,0,150,0.5), rgba(0,150,255,0.5))',
+                                            opacity: 0,
+                                            pointerEvents: 'none',
+                                            borderRadius: '8px'
+                                        }}
+                                    />
+                                )}
+                            </div>
+                        )}
                     </div>
                 );
             })}
