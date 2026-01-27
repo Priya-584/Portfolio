@@ -32,24 +32,28 @@ const AnimatedProjectCard = ({ study, index }: { study: typeof caseStudies[0]; i
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className={`col-span-12 md:col-span-7 ${isEven ? "md:order-1" : "md:order-2"}`}
             >
-                <div className="relative overflow-hidden rounded-3xl bg-secondary/5 border border-border/50 shadow-2xl transition-all duration-500 hover:shadow-primary/10 group aspect-[16/10]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-background via-transparent to-transparent opacity-60 z-10" />
+                <div className="premium-border-container shadow-2xl shadow-primary/20 transition-all duration-500 hover:shadow-primary/10 group aspect-[16/10]">
+                    <div className="premium-border-content p-1">
+                        <div className="relative w-full h-full overflow-hidden rounded-2xl bg-secondary/5">
+                            <div className="absolute inset-0 bg-gradient-to-br from-background via-transparent to-transparent opacity-60 z-10" />
 
-                    {/* Overlay Gradient */}
-                    <div
-                        className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"
-                        style={{
-                            background: `radial-gradient(circle at center, ${study.colors[1]} 0%, transparent 70%)`
-                        }}
-                    />
+                            {/* Overlay Gradient */}
+                            <div
+                                className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"
+                                style={{
+                                    background: `radial-gradient(circle at center, ${study.colors[1]} 0%, transparent 70%)`
+                                }}
+                            />
 
-                    {/* Image */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src={study.image}
-                        alt={study.title}
-                        className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
-                    />
+                            {/* Image */}
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={study.image}
+                                alt={study.title}
+                                className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
+                    </div>
                 </div>
             </motion.div>
 

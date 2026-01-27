@@ -22,14 +22,14 @@ export function ThemeToggle() {
     return (
         <motion.button
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className="relative flex items-center justify-center w-8 h-8 rounded-full border shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 overflow-hidden"
+            className="relative flex items-center justify-center w-8 h-8 rounded-full border shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 overflow-hidden hover:border-primary/50 hover:shadow-[0_0_15px_rgba(124,58,237,0.2)] dark:hover:shadow-[0_0_15px_rgba(167,139,250,0.2)] transition-colors duration-300"
             initial={false}
             animate={{
                 backgroundColor: isDark ? "#0f172a" : "#ffffff", // Slate-950 vs White
                 borderColor: isDark ? "#334155" : "#e2e8f0",     // Slate-700 vs Slate-200
             }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.2 }}
             aria-label="Toggle theme"
         >

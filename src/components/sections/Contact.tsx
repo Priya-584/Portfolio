@@ -26,19 +26,33 @@ export const Contact = () => {
                 </p>
 
                 <div className="flex justify-center gap-4 md:gap-6">
-                    {socialsData.map((social) => (
-                        <a
-                            key={social.name}
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-4 bg-secondary rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-all hover:scale-110"
-                            aria-label={social.name}
-                            title={social.name === "Email" ? "borap584@gmail.com" : social.name}
-                        >
-                            <social.icon size={24} />
-                        </a>
-                    ))}
+                    {socialsData.map((social) => {
+                        const getColorClass = (name: string) => {
+                            switch (name) {
+                                case "LinkedIn":
+                                    return "text-[#0077b5] hover:bg-[#0077b5]/10 hover:shadow-[#0077b5]/20 border-[#0077b5]/20";
+                                case "Email":
+                                    return "text-[#EA4335] hover:bg-[#EA4335]/10 hover:shadow-[#EA4335]/20 border-[#EA4335]/20";
+                                default:
+                                    return "text-foreground hover:bg-primary/10 hover:shadow-primary/20 border-border/50";
+                            }
+                        };
+                        const colorClass = getColorClass(social.name);
+
+                        return (
+                            <a
+                                key={social.name}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`p-4 rounded-full border transition-all duration-300 hover:scale-110 shadow-lg ${colorClass} bg-background group`}
+                                aria-label={social.name}
+                                title={social.name === "Email" ? "borap584@gmail.com" : social.name}
+                            >
+                                <social.icon size={28} className="transition-transform group-hover:rotate-12" />
+                            </a>
+                        );
+                    })}
                 </div>
 
                 {/* <p className="text-muted-foreground text-sm">

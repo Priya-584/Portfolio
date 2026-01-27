@@ -65,15 +65,18 @@ export const Hero = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1 }}
                 >
-                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-secondary to-background border border-border p-1">
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20" />
-                        {/* You would place the profile or a hero graphic here. For now using a stylistic placeholder defined in CSS or structure */}
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                            src={heroData.profileImage}
-                            alt={heroData.title}
-                            className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                        />
+                    <div className="premium-border-container shadow-2xl shadow-primary/20 w-full h-full">
+                        <div className="premium-border-content p-1">
+                            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-secondary to-background">
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 pointer-events-none z-10" />
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={heroData.profileImage}
+                                    alt={heroData.title}
+                                    className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
             </Container>
