@@ -60,14 +60,14 @@ export const Navbar = () => {
                     </Button>
                 </nav>
 
-                <div className="flex md:hidden items-center gap-4">
+                <div className="flex md:hidden items-center gap-4 z-50">
                     <ThemeToggle />
                     {/* Mobile Nav Toggle */}
                     <button
                         className="text-foreground"
                         onClick={() => setIsOpen(!isOpen)}
                     >
-                        {isOpen ? <X /> : <Menu />}
+                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
                 </div>
             </Container>
@@ -77,23 +77,55 @@ export const Navbar = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-full left-0 right-0 bg-background border-b border-border p-4 md:hidden shadow-xl"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "100vh" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="fixed inset-0 top-0 left-0 bg-background bg-gradient-to-br from-background via-background to-primary/20 z-40 md:hidden flex flex-col justify-center items-center"
                     >
-                        <nav className="flex flex-col space-y-4">
+                        <motion.nav
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                            variants={{
+                                open: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+                                closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
+                            }}
+                            className="flex flex-col items-center space-y-8"
+                        >
                             {navLinks.map((link) => (
-                                <Link
+                                <motion.div
                                     key={link.name}
-                                    href={link.href}
-                                    className="text-lg font-medium text-muted-foreground hover:text-foreground"
-                                    onClick={() => setIsOpen(false)}
+                                    variants={{
+                                        open: { opacity: 1, y: 0 },
+                                        closed: { opacity: 0, y: 20 }
+                                    }}
                                 >
-                                    {link.name}
-                                </Link>
+                                    <Link
+                                        href={link.href}
+                                        className="text-3xl font-bold text-foreground hover:text-primary transition-colors"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
                             ))}
-                        </nav>
+                            <motion.div
+                                variants={{
+                                    open: { opacity: 1, y: 0 },
+                                    closed: { opacity: 0, y: 20 }
+                                }}
+                            >
+                                <Button
+                                    href="/CV_UI-UX-Designer.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    variant="primary"
+                                    className="px-8 py-3 text-lg"
+                                >
+                                    Resume
+                                </Button>
+                            </motion.div>
+                        </motion.nav>
                     </motion.div>
                 )}
             </AnimatePresence>
