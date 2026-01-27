@@ -40,7 +40,7 @@ const TimelineItem = ({ step, index }: { step: typeof processData[0]; index: num
             />
 
             {/* Content Side */}
-            <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${isEven ? "md:mr-auto md:text-right" : "md:ml-auto md:text-left"}`}>
+            <div className={`w-full md:w-5/12 pl-12 md:pl-0 ${isEven ? "md:mr-auto md:text-right" : "md:ml-auto md:text-left"}`}>
                 <motion.div
                     whileInView={{
                         borderColor: ["rgba(var(--primary), 0.1)", "rgba(var(--primary), 0.5)", "rgba(var(--primary), 0.1)"],
@@ -58,7 +58,7 @@ const TimelineItem = ({ step, index }: { step: typeof processData[0]; index: num
                     className={`p-6 rounded-2xl bg-secondary/5 border border-primary/20 transition-all duration-300 group relative overflow-hidden`}
                 >
                     {/* Decorative Number Background: Fixed to right on mobile, alternating on desktop */}
-                    <span className={`absolute -top-1 right-4 ${isEven ? "md:left-4 md:right-auto" : "md:right-4"} text-8xl font-bold text-foreground/5 pointer-events-none select-none`}>
+                    <span className={`absolute -top-1 right-4 ${isEven ? "md:left-4 md:right-auto" : "md:right-4"} text-6xl md:text-8xl font-bold text-foreground/5 pointer-events-none select-none`}>
                         0{index + 1}
                     </span>
 
@@ -95,7 +95,7 @@ export const Process = () => {
     const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
     return (
-        <Section id="process" className="bg-background relative">
+        <Section id="process" className="bg-background relative overflow-hidden">
             <Container>
                 <div className="text-center mb-16 max-w-3xl mx-auto space-y-6">
                     <h2 className="text-sm font-bold tracking-[0.2em] text-primary uppercase">

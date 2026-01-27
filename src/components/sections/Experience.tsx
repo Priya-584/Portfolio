@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { experienceData } from "@/constants/experience";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -9,14 +9,30 @@ import { motion, useInView } from "framer-motion";
 const ExperienceCard = ({ job, index }: { job: typeof experienceData[0]; index: number }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const [isMobile, setIsMobile] = useState(true); // Default to mobile for safety (SSR/hydration)
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    const slideVariant = {
+        hidden: isMobile
+            ? { opacity: 0, y: 50, x: 0 }
+            : { opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 0 },
+        visible: { opacity: 1, x: 0, y: 0 }
+    };
 
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={slideVariant}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+            className="relative flex items-center gap-6 md:gap-0 justify-between md:justify-normal md:odd:flex-row-reverse group"
         >
             {/* Timeline Dot with Blinking Effect */}
             <div className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-secondary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-muted-foreground relative">
@@ -33,10 +49,10 @@ const ExperienceCard = ({ job, index }: { job: typeof experienceData[0]; index: 
                 />
             </div>
 
-            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-secondary/50 p-6 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div className="flex-1 min-w-0 md:flex-none md:w-[calc(50%-2.5rem)] bg-secondary/50 p-6 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <div className="flex flex-col sm:flex-row justify-between mb-2">
-                    <h3 className="font-bold text-foreground text-lg">{job.role}</h3>
-                    <time className="text-xs text-muted-foreground font-mono self-start sm:self-center bg-secondary px-2 py-1 rounded border border-border">{job.period}</time>
+                    <h3 className="font-bold text-foreground text-lg truncate pr-2">{job.role}</h3>
+                    <time className="text-xs text-muted-foreground font-mono self-start sm:self-center bg-secondary px-2 py-1 rounded border border-border shrink-0">{job.period}</time>
                 </div>
                 <div className="text-primary text-sm font-medium mb-3">{job.company}</div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -49,7 +65,7 @@ const ExperienceCard = ({ job, index }: { job: typeof experienceData[0]; index: 
 
 export const Experience = () => {
     return (
-        <Section id="experience" className="bg-background">
+        <Section id="experience" className="bg-background overflow-hidden relative">
             <Container>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
