@@ -47,18 +47,18 @@ export const caseStudies = [
         colors: ["#000000", "#FCD34D", "#FFFFFF"],
         link: "https://www.figma.com/proto/i2srShmgBjD7OO4nBtz12C/NFT-Marketplace-Template--clone-version-by-me?page-id=1647%3A17907&node-id=1647-23894&viewport=-494%2C-716%2C0.07&t=gMRg6guvWPxzonOx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1647%3A23894"
     },
-       {
-        id: 5,
-        title: "Duholiya – Assessment Management System",
-        category: "SaaS / Web",
-        image: "/images/duholiya.png",
-        problem: "Duholiya is a multi-tenant assessment and operations platform built to manage academic and skill-based assessments at scale. Users can create assessments using rich question types including MCQ, checkbox, radio, fill-in-the-blank, and text-based inputs, as well as configure evaluation criteria and upload files. Participants can join assessments through group assignments, while invigilators can monitor and approve participation. Beyond assessments, the platform offers enterprise-level modules such as tenant management, product onboarding with pricing models, and staff role assignment. My design approach focused on simplifying these multi-step, multi-role workflows into a cohesive system that reduces friction and supports efficient task execution.",
-        goal: "Streamline the checkout flow and build trust with the user.",
-        process: "Analyzed heatmaps, redesigned the cart summary, and added trust signals.",
-        outcome: "Transformed fragmented assessment processes into a structured SaaS experience, improving user adoption, reducing complexity, and supporting scalable enterprise operations.",
-        colors: ["#000000", "#FCD34D", "#FFFFFF"],
-        link: "https://www.figma.com/proto/i2srShmgBjD7OO4nBtz12C/NFT-Marketplace-Template--clone-version-by-me?page-id=1647%3A17907&node-id=1647-23894&viewport=-494%2C-716%2C0.07&t=gMRg6guvWPxzonOx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1647%3A23894"
-    }
+    //    {
+    //     id: 5,
+    //     title: "Duholiya – Assessment Management System",
+    //     category: "SaaS / Web",
+    //     image: "/images/duholiya.png",
+    //     problem: "Duholiya is a multi-tenant assessment and operations platform built to manage academic and skill-based assessments at scale. Users can create assessments using rich question types including MCQ, checkbox, radio, fill-in-the-blank, and text-based inputs, as well as configure evaluation criteria and upload files. Participants can join assessments through group assignments, while invigilators can monitor and approve participation. Beyond assessments, the platform offers enterprise-level modules such as tenant management, product onboarding with pricing models, and staff role assignment. My design approach focused on simplifying these multi-step, multi-role workflows into a cohesive system that reduces friction and supports efficient task execution.",
+    //     goal: "Streamline the checkout flow and build trust with the user.",
+    //     process: "Analyzed heatmaps, redesigned the cart summary, and added trust signals.",
+    //     outcome: "Transformed fragmented assessment processes into a structured SaaS experience, improving user adoption, reducing complexity, and supporting scalable enterprise operations.",
+    //     colors: ["#000000", "#FCD34D", "#FFFFFF"],
+    //     link: "https://www.figma.com/proto/i2srShmgBjD7OO4nBtz12C/NFT-Marketplace-Template--clone-version-by-me?page-id=1647%3A17907&node-id=1647-23894&viewport=-494%2C-716%2C0.07&t=gMRg6guvWPxzonOx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1647%3A23894"
+    // }
 ];
 
 
