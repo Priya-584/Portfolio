@@ -92,7 +92,8 @@ export const skillsData = [
         icon: FaSeedling,
         color: "#FFC107",
       },
-      { name: "Notion", icon: SiNotion, color: "#000000" }, // Will handle black in dark mode logic if needed
+      { name: "Notion", icon: SiNotion, color: "#000000" },
+      { name: "Luma", icon: FaVideo, color: "#FF4D00" }, // Dynamic Orange/Red for Luma
     ],
   },
 ];
