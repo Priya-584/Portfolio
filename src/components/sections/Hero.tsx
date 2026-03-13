@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import SplitText from "@/components/ui/SplitText";
 import ShinyText from "@/components/ui/ShinyText";
 import { ScrollDownIndicator } from "@/components/ui/ScrollDownIndicator";
+import { ArrowRight } from "lucide-react";
 
 
 
@@ -35,7 +36,7 @@ export const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-xl text-muted-foreground max-w-lg leading-relaxed"
+                        className="text-xl text-muted-foreground max-w-2xl leading-relaxed"
                     >
                         <ShinyText
                             text={heroData.subtitle}
@@ -51,16 +52,21 @@ export const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-wrap gap-3 md:gap-4"
+                        className="flex flex-wrap gap-4 pt-4"
                     >
-                        <Button href="#work">{heroData.ctaPrimary}</Button>
-                        <Button href={heroData.ctaSecondary} variant="outline" target="_blank" rel="noopener noreferrer">Download Resume</Button>
+                        <Button href="#work" className="group">
+                            {heroData.ctaPrimary}
+                            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                        </Button>
+                        <Button href={heroData.ctaSecondary} variant="outline" target="_blank" rel="noopener noreferrer">
+                            Resume
+                        </Button>
                     </motion.div>
                 </div>
 
                 {/* Abstract or Hero Image Representation */}
                 <motion.div
-                    className="flex-1 relative aspect-square max-w-md w-full"
+                    className="flex-1 relative aspect-[4/5] max-w-sm w-full mx-auto md:mx-0"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1 }}
@@ -73,7 +79,7 @@ export const Hero = () => {
                                 <img
                                     src={heroData.profileImage}
                                     alt={heroData.title}
-                                    className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
                         </div>

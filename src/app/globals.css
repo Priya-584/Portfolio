@@ -93,9 +93,69 @@ button, a, [role="button"], input[type="submit"], input[type="button"], input[ty
   padding: 2px;
   border-radius: 20px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+}
+
+.glass-card {
+  background: rgba(var(--background), 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(var(--foreground), 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.minimalist-input {
+  background: transparent;
+  border-bottom: 2px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.minimalist-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(120%) brightness(120%);
+}
+
+.moving-gradient {
+  background: linear-gradient(-45deg, #7c3aed, #db2777, #2563eb, #00dfd8);
+  background-size: 400% 400%;
+  animation: static-gradient 15s ease infinite;
+}
+
+@keyframes static-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.genz-input {
+  @apply bg-transparent border-0 py-4 px-0 transition-all duration-300 text-xl font-medium placeholder:text-muted-foreground/30;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.genz-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-top-width: 0 !important;
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
+  border-bottom-color: var(--primary) !important;
 }
 
 .premium-border-container::before {
@@ -121,4 +181,8 @@ button, a, [role="button"], input[type="submit"], input[type="button"], input[ty
   height: 100%;
   background: var(--background);
   border-radius: 18px;
+}
+
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

@@ -57,7 +57,7 @@ export const SocialMedia = () => {
     const [selectedLogo, setSelectedLogo] = useState<string | null>(null);
 
     return (
-        <Section className="bg-background relative overflow-hidden py-24">
+        <Section id="graphics" className="bg-background relative overflow-hidden py-24">
             {/* ... keep decoration ... */}
             <div className="absolute top-1/4 left-0 w-96 h-96 bg-pink-500/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />

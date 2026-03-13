@@ -1,62 +1,137 @@
+"use client";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+import { motion, useMotionValue, useSpring, HTMLMotionProps } from "framer-motion";
+import { useRef, useState } from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     href?: string;
-    variant?: "primary" | "secondary" | "outline";
+    variant?: "primary" | "secondary" | "outline" | "ghost";
     target?: string;
     rel?: string;
+    isMagnetic?: boolean;
 }
 
 const MotionLink = motion.create(Link);
 
-export const Button = ({ children, className, href, variant = "primary", ...props }: ButtonProps) => {
-    // Base styles (removed transition/transform classes as Motion handles them)
-    const baseStyles = "relative inline-flex items-center justify-center rounded-full px-8 py-3 text-base font-medium cursor-pointer overflow-hidden group";
+export const Button = ({ 
+    children, 
+    className, 
+    href, 
+    variant = "primary", 
+    isMagnetic = true,
+    ...props 
+}: ButtonProps) => {
+    const ref = useRef<any>(null);
+    const [isHovered, setIsHovered] = useState(false);
 
-    const variants = {
-        primary: "bg-primary text-white border border-primary hover:bg-primary/90 shadow-lg hover:shadow-primary/25",
-        secondary: "bg-secondary text-foreground border border-border hover:bg-secondary/80 hover:border-foreground/20",
-        outline: "border-2 border-border text-foreground hover:bg-secondary/50 hover:border-primary/50 backdrop-blur-sm",
+    // Magnetic logic
+    const xOffset = useMotionValue(0);
+    const yOffset = useMotionValue(0);
+
+    const mouseX = useSpring(xOffset, { stiffness: 150, damping: 15 });
+    const mouseY = useSpring(yOffset, { stiffness: 150, damping: 15 });
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isMagnetic) return;
+        const { clientX, clientY } = e;
+        const { left, top, width, height } = ref.current?.getBoundingClientRect() || { left: 0, top: 0, width: 0, height: 0 };
+        const centerX = left + width / 2;
+        const centerY = top + height / 2;
+        
+        // Pull strength
+        const pullX = (clientX - centerX) * 0.4;
+        const pullY = (clientY - centerY) * 0.4;
+        
+        xOffset.set(pullX);
+        yOffset.set(pullY);
     };
 
-    const content = (
-        <>
-            {/* Shine Effect Overlay */}
-            <div className="absolute inset-0 -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent z-0 pointer-events-none" />
+    const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+        xOffset.set(0);
+        yOffset.set(0);
+        setIsHovered(false);
+        if (props.onMouseLeave) {
+            (props.onMouseLeave as any)(e);
+        }
+    };
 
-            {/* Button Text */}
-            <span className="relative z-10">{children}</span>
+    const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+        setIsHovered(true);
+        if (props.onMouseEnter) {
+            (props.onMouseEnter as any)(e);
+        }
+    };
+
+    const baseStyles = "relative inline-flex items-center justify-center rounded-full px-10 py-4 text-lg font-black uppercase tracking-widest cursor-pointer overflow-hidden group transition-all duration-300";
+
+    const variants = {
+        primary: "moving-gradient text-white shadow-[0_20px_50px_rgba(var(--primary-rgb),0.3)]",
+        secondary: "bg-secondary text-foreground border border-border hover:bg-secondary/80",
+        outline: "border-2 border-border text-foreground hover:bg-secondary/50 backdrop-blur-sm",
+        ghost: "bg-transparent text-foreground hover:bg-secondary/50",
+    };
+
+    const innerContent = (
+        <>
+            {/* Liquid Fill Effect */}
+            <motion.div
+                initial={false}
+                animate={{
+                    top: isHovered ? "-10%" : "100%",
+                    left: isHovered ? "-10%" : "100%",
+                }}
+                className="absolute w-[120%] h-[120%] bg-white/20 blur-2xl rounded-full z-0 pointer-events-none transition-all duration-500 ease-out"
+            />
+            
+            {/* Shine Flare */}
+            <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-0 -left-full w-[50%] h-full bg-linear-to-r from-transparent via-white/40 to-transparent -skew-x-12 group-hover:left-[150%] transition-all duration-1000 ease-in-out" />
+            </div>
+
+            <span className="relative z-10 flex items-center gap-2">
+                {children}
+            </span>
         </>
     );
 
-    const animationProps = {
-        whileHover: { scale: 1.05 },
-        whileTap: { scale: 0.95 },
-        transition: { type: "spring", stiffness: 400, damping: 17 },
-    };
+    const magneticStyle = { x: mouseX, y: mouseY };
+
+    // Separate motion props from HTML props to avoid conflicts
+    const { onMouseEnter, onMouseLeave, onMouseMove, ...restProps } = props;
 
     if (href) {
         return (
             <MotionLink
+                ref={ref}
                 href={href}
                 className={cn(baseStyles, variants[variant], className)}
-                {...(animationProps as any)}
-                {...(props as any)}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave as any}
+                onMouseEnter={handleMouseEnter as any}
+                style={magneticStyle}
+                whileTap={{ scale: 0.95 }}
+                {...(restProps as any)}
             >
-                {content}
+                {innerContent}
             </MotionLink>
         );
     }
 
     return (
         <motion.button
+            ref={ref}
+            type={props.type || "button"}
             className={cn(baseStyles, variants[variant], className)}
-            {...animationProps}
-            {...(props as any)}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave as any}
+            onMouseEnter={handleMouseEnter as any}
+            style={magneticStyle}
+            whileTap={{ scale: 0.95 }}
+            {...(restProps as any)}
         >
-            {content}
+            {innerContent}
         </motion.button>
     );
 };

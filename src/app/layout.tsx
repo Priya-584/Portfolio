@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { ToasterProvider } from "@/components/ui/ToasterProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading" }); // Define Outfit
@@ -34,6 +35,7 @@ export default function RootLayout({
           <Navbar />
           <ScrollProgress />
           {children}
+          <ToasterProvider />
           <ScrollToTop />
         </ThemeProvider>
       </body>
