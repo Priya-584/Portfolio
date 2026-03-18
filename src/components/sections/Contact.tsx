@@ -83,7 +83,7 @@ export const Contact = () => {
     };
 
     return (
-        <Section id="contact" className="bg-background relative pt-15 pb-0 overflow-visible">
+        <Section id="contact" className="bg-background relative pt-15 pb-20 md:pb-32 overflow-hidden">
             {/* Gen-Z Moving Blobs */}
             <div className="absolute top-0 right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-pulse pointer-events-none" />
             <div className="absolute bottom-[10%] left-[-10%] w-[50%] h-[50%] bg-purple-500/10 rounded-full blur-[140px] pointer-events-none" />
@@ -185,7 +185,7 @@ export const Contact = () => {
                                         onFocus={() => setFocusedField('name')}
                                         onBlur={() => setFocusedField(null)}
                                     />
-                                    <label className="absolute left-0 top-4 text-xl font-medium text-muted-foreground/40 transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:font-bold uppercase tracking-widest">
+                                    <label className="absolute left-0 top-3 text-lg md:text-xl font-medium text-muted-foreground/40 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:font-bold uppercase tracking-widest">
                                         Your Name
                                     </label>
                                     {/* Base Line */}
@@ -227,7 +227,7 @@ export const Contact = () => {
                                         onFocus={() => setFocusedField('email')}
                                         onBlur={() => setFocusedField(null)}
                                     />
-                                    <label className="absolute left-0 top-4 text-xl font-medium text-muted-foreground/40 transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:font-bold uppercase tracking-widest">
+                                    <label className="absolute left-0 top-3 text-lg md:text-xl font-medium text-muted-foreground/40 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:font-bold uppercase tracking-widest">
                                         Email
                                     </label>
                                     {/* Base Line */}
@@ -269,7 +269,7 @@ export const Contact = () => {
                                         onFocus={() => setFocusedField('phone')}
                                         onBlur={() => setFocusedField(null)}
                                     />
-                                    <label className="absolute left-0 top-4 text-xl font-medium text-muted-foreground/40 transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:font-bold uppercase tracking-widest">
+                                    <label className="absolute left-0 top-3 text-lg md:text-xl font-medium text-muted-foreground/40 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:font-bold uppercase tracking-widest">
                                         Phone (Optional)
                                     </label>
                                     {/* Base Line */}
@@ -311,7 +311,7 @@ export const Contact = () => {
                                         onFocus={() => setFocusedField('message')}
                                         onBlur={() => setFocusedField(null)}
                                     />
-                                    <label className="absolute left-0 top-4 text-xl font-medium text-muted-foreground/40 transition-all pointer-events-none peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:font-bold uppercase tracking-widest">
+                                    <label className="absolute left-0 top-3 text-lg md:text-xl font-medium text-muted-foreground/40 transition-all pointer-events-none peer-focus:-top-6 peer-focus:text-xs peer-focus:text-primary peer-focus:font-bold peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:font-bold uppercase tracking-widest">
                                         Message
                                     </label>
                                     {/* Base Line */}
@@ -364,7 +364,7 @@ export const Contact = () => {
                                                     exit={{ opacity: 0, y: -20 }}
                                                     className="flex items-center gap-3"
                                                 >
-                                                    <span>Transmit</span>
+                                                    <span>Send Message</span>
                                                     <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
                                                 </motion.div>
                                             )}

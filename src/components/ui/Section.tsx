@@ -12,7 +12,7 @@ interface SectionProps {
 
 export const Section = ({ children, className, id }: SectionProps) => {
     return (
-        <section id={id} className={cn("py-8 md:py-15", className)}>
+        <section id={id} className={cn("py-8 md:py-15 scroll-mt-24 md:scroll-mt-10", className)}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

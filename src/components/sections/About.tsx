@@ -52,17 +52,17 @@ export const About = () => {
                         </div>
                     </div>
 
-                    <div className="relative group">
+                    <div className="relative group max-w-sm mx-auto w-full">
                         <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div className="relative w-full h-[60vh] bg-secondary rounded-xl overflow-hidden border border-border">
+                        <div className="relative w-full h-[70vh] bg-secondary rounded-xl overflow-hidden border border-border">
                             {/* Use Next.js Image Component in production, but for now simple img for compatibility with generic setup */}
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={aboutData.image}
                                 alt="Profile"
-                                className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                                className="object-cover w-full h-full opacity-100 group-hover:opacity-100 transition-opacity duration-500"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                            {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" /> */}
                         </div>
                     </div>
                 </div>

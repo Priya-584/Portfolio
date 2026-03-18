@@ -12,9 +12,9 @@ import GradientText from "@/components/ui/GradientText";
 const navLinks = [
     { name: "About", href: "#about" },
     { name: "Work", href: "#work" },
+    { name: "Graphics", href: "#graphics" },
     { name: "Process", href: "#process" },
     { name: "Experience", href: "#experience" },
-    { name: "Graphics", href: "#graphics" },
     { name: "Contact", href: "#contact" },
 ];
 
@@ -65,6 +65,8 @@ export const Navbar = () => {
                         rel="noopener noreferrer"
                         variant="primary"
                         className="text-sm font-medium px-6 py-2 h-auto"
+                        isMagnetic={false}
+                        isAnimated={false}
                     >
                         Resume
                     </Button>
@@ -131,6 +133,8 @@ export const Navbar = () => {
                                     rel="noopener noreferrer"
                                     variant="primary"
                                     className="px-8 py-3 text-lg"
+                                    isMagnetic={false}
+                                    isAnimated={false}
                                 >
                                     Resume
                                 </Button>

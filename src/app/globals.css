@@ -35,11 +35,14 @@
   --accent: #0f172a; /* Slate 900 */
 }
 
-body {
+html, body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
   text-wrap: pretty;
 }

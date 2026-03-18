@@ -25,6 +25,7 @@ import {
   SiCanva,
   SiCanvas,
   SiFramer,
+  SiAnthropic,
 } from "react-icons/si";
 
 export const skillsData = [
@@ -94,6 +95,7 @@ export const skillsData = [
       },
       { name: "Notion", icon: SiNotion, color: "#000000" },
       { name: "Luma", icon: FaVideo, color: "#FF4D00" }, // Dynamic Orange/Red for Luma
+      { name: "Claude AI", icon: SiAnthropic, color: "#D97757" },
     ],
   },
 ];

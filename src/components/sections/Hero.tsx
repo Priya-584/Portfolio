@@ -48,20 +48,15 @@ export const Hero = () => {
                         />
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-wrap gap-4 pt-4"
-                    >
-                        <Button href="#work" className="group">
+                    <div className="flex flex-wrap gap-4 pt-4">
+                        <Button href="#work" className="group" isMagnetic={false} isAnimated={false}>
                             {heroData.ctaPrimary}
-                            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                            <ArrowRight className="w-5 h-5" />
                         </Button>
-                        <Button href={heroData.ctaSecondary} variant="outline" target="_blank" rel="noopener noreferrer">
+                        <Button href={heroData.ctaSecondary} variant="outline" target="_blank" rel="noopener noreferrer" isMagnetic={false} isAnimated={false}>
                             Resume
                         </Button>
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Abstract or Hero Image Representation */}

@@ -11,6 +11,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     target?: string;
     rel?: string;
     isMagnetic?: boolean;
+    isAnimated?: boolean;
 }
 
 const MotionLink = motion.create(Link);
@@ -21,6 +22,7 @@ export const Button = ({
     href, 
     variant = "primary", 
     isMagnetic = true,
+    isAnimated = true,
     ...props 
 }: ButtonProps) => {
     const ref = useRef<any>(null);
@@ -76,19 +78,23 @@ export const Button = ({
     const innerContent = (
         <>
             {/* Liquid Fill Effect */}
-            <motion.div
-                initial={false}
-                animate={{
-                    top: isHovered ? "-10%" : "100%",
-                    left: isHovered ? "-10%" : "100%",
-                }}
-                className="absolute w-[120%] h-[120%] bg-white/20 blur-2xl rounded-full z-0 pointer-events-none transition-all duration-500 ease-out"
-            />
+            {isAnimated && (
+                <motion.div
+                    initial={false}
+                    animate={{
+                        top: isHovered ? "-10%" : "100%",
+                        left: isHovered ? "-10%" : "100%",
+                    }}
+                    className="absolute w-[120%] h-[120%] bg-white/20 blur-2xl rounded-full z-0 pointer-events-none transition-all duration-500 ease-out"
+                />
+            )}
             
             {/* Shine Flare */}
-            <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute top-0 -left-full w-[50%] h-full bg-linear-to-r from-transparent via-white/40 to-transparent -skew-x-12 group-hover:left-[150%] transition-all duration-1000 ease-in-out" />
-            </div>
+            {isAnimated && (
+                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute top-0 -left-full w-[50%] h-full bg-linear-to-r from-transparent via-white/40 to-transparent -skew-x-12 group-hover:left-[150%] transition-all duration-1000 ease-in-out" />
+                </div>
+            )}
 
             <span className="relative z-10 flex items-center gap-2">
                 {children}
@@ -111,7 +117,7 @@ export const Button = ({
                 onMouseLeave={handleMouseLeave as any}
                 onMouseEnter={handleMouseEnter as any}
                 style={magneticStyle}
-                whileTap={{ scale: 0.95 }}
+                whileTap={isAnimated ? { scale: 0.95 } : undefined}
                 {...(restProps as any)}
             >
                 {innerContent}
