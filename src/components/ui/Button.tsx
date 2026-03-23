@@ -16,14 +16,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const MotionLink = motion.create(Link);
 
-export const Button = ({ 
-    children, 
-    className, 
-    href, 
-    variant = "primary", 
-    isMagnetic = true,
-    isAnimated = true,
-    ...props 
+export const Button = ({
+    children,
+    className,
+    href,
+    variant = "primary",
+    isMagnetic = false,
+    isAnimated = false,
+    ...props
 }: ButtonProps) => {
     const ref = useRef<any>(null);
     const [isHovered, setIsHovered] = useState(false);
@@ -41,11 +41,11 @@ export const Button = ({
         const { left, top, width, height } = ref.current?.getBoundingClientRect() || { left: 0, top: 0, width: 0, height: 0 };
         const centerX = left + width / 2;
         const centerY = top + height / 2;
-        
+
         // Pull strength
         const pullX = (clientX - centerX) * 0.4;
         const pullY = (clientY - centerY) * 0.4;
-        
+
         xOffset.set(pullX);
         yOffset.set(pullY);
     };
@@ -88,7 +88,7 @@ export const Button = ({
                     className="absolute w-[120%] h-[120%] bg-white/20 blur-2xl rounded-full z-0 pointer-events-none transition-all duration-500 ease-out"
                 />
             )}
-            
+
             {/* Shine Flare */}
             {isAnimated && (
                 <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">

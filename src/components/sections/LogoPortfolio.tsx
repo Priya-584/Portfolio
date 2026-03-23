@@ -127,7 +127,7 @@ export const LogoPortfolio = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="group relative rounded-3xl overflow-hidden bg-white border border-border/50 hover:border-primary/40 transition-all duration-500 transform hover:-translate-y-2 cursor-pointer shadow-sm hover:shadow-xl flex flex-col"
+                  className="group relative rounded-3xl overflow-hidden bg-secondary border border-border/50 hover:border-primary/40 transition-all duration-500 transform hover:-translate-y-2 cursor-pointer shadow-sm hover:shadow-xl flex flex-col"
                   onClick={() => setSelectedItem(item)}
                 >
                   {/* Media Container */}
@@ -216,7 +216,7 @@ export const LogoPortfolio = () => {
               onClick={() => setVisibleCount(prev => prev + 9)}
               className="group flex flex-col items-center gap-4 transition-all hover:-translate-y-1"
             >
-              <div className="flex items-center gap-2 px-8 py-4 bg-white border border-border/50 rounded-full font-bold text-foreground hover:bg-primary hover:text-white hover:border-primary shadow-sm hover:shadow-xl transition-all">
+              <div className="flex items-center gap-2 px-8 py-4 bg-secondary/50 backdrop-blur-md border border-border/50 rounded-full font-bold text-foreground hover:bg-primary hover:text-white hover:border-primary shadow-sm hover:shadow-xl transition-all">
                 Load More Projects
                 <span className="ml-2 text-muted-foreground group-hover:text-white/80 font-normal text-sm">
                   ({filteredItems.length - visibleCount} more)
@@ -247,11 +247,11 @@ export const LogoPortfolio = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden border border-border/50 shadow-2xl flex flex-col lg:flex-row max-h-[85vh] pointer-events-auto"
+              className="relative w-full max-w-4xl bg-background rounded-3xl overflow-hidden border border-border/50 shadow-2xl flex flex-col lg:flex-row max-h-[85vh] pointer-events-auto"
             >
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-4 right-4 z-20 p-2 bg-white/10 hover:bg-primary hover:text-white rounded-full transition-all text-foreground border border-white/10 backdrop-blur-md"
+                className="absolute top-4 right-4 z-20 p-2 bg-secondary/50 hover:bg-primary hover:text-white rounded-full transition-all text-foreground border border-border/50 backdrop-blur-md"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -284,7 +284,7 @@ export const LogoPortfolio = () => {
               </div>
 
               {/* Modal Info Area */}
-              <div className="w-full lg:w-[45%] p-6 md:p-10 hide-scrollbar overflow-y-auto bg-white border-t lg:border-t-0 lg:border-l border-border/50">
+              <div className="w-full lg:w-[45%] p-6 md:p-10 hide-scrollbar overflow-y-auto bg-background border-t lg:border-t-0 lg:border-l border-border/50">
                 <div className="flex items-center gap-2 text-primary font-bold text-[10px] tracking-[0.3em] uppercase mb-4">
                   <CategoryIcon id={selectedItem.category} />
                   <span>{selectedItem.category}</span>

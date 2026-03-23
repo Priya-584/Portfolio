@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { caseStudies } from "@/constants/caseStudies";
 import { Container } from "@/components/ui/Container";
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import SplitText from "@/components/ui/SplitText";
 import CountUp from "@/components/ui/CountUp";
@@ -32,10 +34,10 @@ const AnimatedProjectCard = ({ study, index }: { study: typeof caseStudies[0]; i
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className={`col-span-12 md:col-span-7 ${isEven ? "md:order-1" : "md:order-2"}`}
             >
-                <div className="premium-border-container shadow-2xl shadow-primary/20 transition-all duration-500 hover:shadow-primary/10 group aspect-[16/10]">
+                <div className="premium-border-container shadow-2xl shadow-primary/20 transition-all duration-500 hover:shadow-primary/10 group aspect-16/10">
                     <div className="premium-border-content p-1">
                         <div className="relative w-full h-full overflow-hidden rounded-2xl bg-secondary/5">
-                            <div className="absolute inset-0 bg-gradient-to-br from-background via-transparent to-transparent opacity-60 z-10" />
+                            <div className="absolute inset-0 bg-linear-to-br from-background via-transparent to-transparent opacity-60 z-10" />
 
                             {/* Overlay Gradient */}
                             <div
@@ -180,10 +182,26 @@ export const CaseStudies = () => {
                 </div>
 
                 <div className="flex flex-col">
-                    {caseStudies.map((study, index) => (
+                    {caseStudies.slice(0, 4).map((study, index) => (
                         <AnimatedProjectCard key={study.id} study={study} index={index} />
                     ))}
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="flex justify-center mt-20"
+                >
+                    <Button
+                        href="/projects"
+                        variant="primary"
+                        className="px-10 py-5 h-auto text-lg"
+                    >
+                        See More Projects
+                        <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </Button>
+                </motion.div>
             </Container>
         </Section>
     );

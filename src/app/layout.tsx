@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google"; // Added Outfit
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
@@ -35,6 +36,7 @@ export default function RootLayout({
           <Navbar />
           <ScrollProgress />
           {children}
+          {/* <Footer /> */}
           <ToasterProvider />
           <ScrollToTop />
         </ThemeProvider>

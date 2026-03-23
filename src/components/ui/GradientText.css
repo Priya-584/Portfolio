@@ -4,21 +4,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 1.25rem;
   font-weight: 900;
-  backdrop-filter: blur(10px);
-  transition: box-shadow 0.5s ease-out;
-  overflow: visible; /* Changed from hidden to visible to prevent clipping */
+  transition: all 0.5s ease-out;
+  overflow: visible;
   cursor: pointer;
-  font-family: var(--font-heading), sans-serif; /* Use new font */
-  padding: 0.2rem; /* Add padding to prevent clipping */
-  letter-spacing: 0.05em; /* Reduce space between characters */
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: 0.05em;
 }
 
 .animated-gradient-text.with-border {
   padding: 0.35rem 0.75rem;
   position: relative;
-  /* Ensure border radius is respected */
+  border-radius: 1.25rem;
 }
 
 .gradient-overlay {
