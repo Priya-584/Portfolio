@@ -105,7 +105,7 @@ export default function ProjectsPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        {caseStudies.map((project, index) => (
+                        {[...caseStudies].reverse().map((project, index) => (
                             <ProjectCard key={project.id} project={project} index={index} />
                         ))}
                     </div>

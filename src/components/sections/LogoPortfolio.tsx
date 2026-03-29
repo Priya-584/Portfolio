@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 const CategoryIcon = ({ id }: { id: string }) => {
   switch (id) {
     case 'logo': return <Palette className="w-4 h-4" />;
-    case 'banner': return <ImageIcon className="w-4 h-4" />;
+    case 'mockup': return <ImageIcon className="w-4 h-4" />;
     case 'invitation': return <Mail className="w-4 h-4" />;
     default: return <Layout className="w-4 h-4" />;
   }
@@ -174,7 +174,9 @@ export const LogoPortfolio = () => {
                       <div className="text-primary">
                         <CategoryIcon id={item.category} />
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground">{item.category}</span>
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground">
+                        {CATEGORIES.find(c => c.id === item.category)?.label || item.category}
+                      </span>
                     </div>
                     <h3 className="text-lg font-bold text-foreground mb-1">{item.title}</h3>
                     <div className="flex items-center gap-2 text-primary font-bold text-xs">
@@ -287,7 +289,7 @@ export const LogoPortfolio = () => {
               <div className="w-full lg:w-[45%] p-6 md:p-10 hide-scrollbar overflow-y-auto bg-background border-t lg:border-t-0 lg:border-l border-border/50">
                 <div className="flex items-center gap-2 text-primary font-bold text-[10px] tracking-[0.3em] uppercase mb-4">
                   <CategoryIcon id={selectedItem.category} />
-                  <span>{selectedItem.category}</span>
+                  <span>{CATEGORIES.find(c => c.id === selectedItem.category)?.label || selectedItem.category}</span>
                 </div>
                 
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-tight">{selectedItem.title}</h2>

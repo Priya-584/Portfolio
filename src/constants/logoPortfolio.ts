@@ -1,7 +1,7 @@
 export const CATEGORIES = [
   { id: 'all', label: 'All Work' },
   { id: 'logo', label: 'Logos' },
-  { id: 'banner', label: 'Mockups' },
+  { id: 'mockup', label: 'Mockups' },
   { id: 'invitation', label: 'Poster' },
 ];
 
@@ -69,7 +69,7 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 7,
     title: "Furious Brand Showcase",
-    category: "banner",
+    category: "mockup",
     image: "/images/Furious_Mockup1.jpg.jpeg",
     description: "Premium brand presentation featuring deep textures and urban-inspired typography for a modern apparel line.",
     tags: ["Apparel", "Texture", "Urban"],
@@ -79,7 +79,7 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 8,
     title: "Minimalist Identity Mockup",
-    category: "banner",
+    category: "mockup",
     image: "/images/Furious_Mockup2.png",
     description: "Sleek and professional stationary mockup focusing on clean lines and a monochromatic color scheme.",
     tags: ["Minimalist", "Stationary", "Sleek"],
@@ -89,7 +89,7 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 10,
     title: "Golden City Luxury Identity",
-    category: "banner",
+    category: "mockup",
     image: "/images/Golden_City 3.jpg.jpeg",
     description: "Elegant gold-foiled identity presentation for a luxury real estate development project.",
     tags: ["Luxury", "Real Estate", "Gold"],
@@ -110,7 +110,7 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 11,
     title: "Premium Bottle Mockup",
-    category: "banner",
+    category: "mockup",
     image: "/images/mockups_bottle.png",
     description: "High-quality realistic bottle packaging mockup for beverage brands, featuring professional lighting and textures.",
     tags: ["Product", "Packaging", "3D"],
@@ -120,7 +120,7 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 12,
     title: "Character Design Showcase",
-    category: "banner",
+    category: "mockup",
     image: "/images/mockups_cartoon.png",
     description: "Creative character design and mascot presentation in a playful mockup style, perfect for brand mascots.",
     tags: ["Illustration", "Character", "Playful"],
@@ -130,11 +130,21 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 13,
     title: "Product Tin Mockup",
-    category: "banner",
+    category: "mockup",
     image: "/images/mockups_tin.png",
     description: "Professional metal tin packaging mockup for snacks or dry goods, showcasing surface textures and lid details.",
     tags: ["Packaging", "Metal", "Product"],
     client: "Snackify",
+    year: "2026"
+  },
+   {
+    id: 14,
+    title: "Saaz Drop – Rice Bran Oil Packaging",
+    category: "mockup",
+    image: "/images/mockup_bottle.jpeg",
+    description: "Premium plastic bottle packaging design for Saaz Drop Rice Bran Oil, featuring clean labels and realistic product visualization.",
+    tags: ["Packaging", "Bottle", "Product"],
+    client: "Saaz Drop",
     year: "2026"
   }
 ];
