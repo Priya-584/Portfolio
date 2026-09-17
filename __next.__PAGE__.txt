@@ -1,0 +1,15 @@
+1:"$Sreact.fragment"
+2:I[77258,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"Hero"]
+3:I[95116,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"About"]
+4:I[44024,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"CaseStudies"]
+5:I[8429,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"LogoPortfolio"]
+6:I[14142,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"SocialMedia"]
+7:I[648,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"Process"]
+8:I[69411,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"Skills"]
+9:I[34506,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"Experience"]
+a:I[47710,["/Portfolio/_next/static/chunks/42de6c597a09f477.js","/Portfolio/_next/static/chunks/b46ec4c92d3ec66d.js","/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","/Portfolio/_next/static/chunks/6875932f975e25ed.js"],"Contact"]
+b:I[97367,["/Portfolio/_next/static/chunks/ff1a16fafef87110.js","/Portfolio/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+c:"$Sreact.suspense"
+:HL["/Portfolio/_next/static/chunks/e0edcff919775cec.css","style"]
+0:{"buildId":"JNuxJtQ2OAlDcK4J5F5ar","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"bg-background min-h-screen text-foreground","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}],["$","$L9",null,{}],["$","$La",null,{}]]}],[["$","link","0",{"rel":"stylesheet","href":"/Portfolio/_next/static/chunks/e0edcff919775cec.css","precedence":"next"}],["$","script","script-0",{"src":"/Portfolio/_next/static/chunks/fbf9a65cb6777e5c.js","async":true}],["$","script","script-1",{"src":"/Portfolio/_next/static/chunks/6875932f975e25ed.js","async":true}]],["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"loading":null,"isPartial":false}
+d:null
