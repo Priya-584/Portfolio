@@ -1,4 +1,20 @@
 export const caseStudies = [
+          {
+      id: 9,
+      title: "CaseDiary AI",
+      category: "AI / SaaS / Product Design",
+      image: "/images/casediary.png",
+      problem:
+        "Police officers often have to deal with repetitive documentation, formatting, and case-related records. The challenge was to make these everyday tasks simpler without making the product feel complicated.",
+      goal:
+        "Create a clear and structured digital experience that helps officers manage case documentation, create documents, use voice input, review case work, and export files with less effort.",
+      process:
+        "Started by understanding the documentation workflow and identifying the key tasks officers need to perform regularly. Designed the information architecture, user flows, wireframes, and UI system, then refined the experience around Case Diary, Voice AI, Document Editor, Samiksha, and PDF workflows.",
+      outcome:
+        "Created a focused product experience that brings multiple documentation workflows together in one place, making the overall process more structured, clear, and easier to navigate.",
+      colors: ["#F97316", "#EA580C", "#FFF7ED"],
+      link: "https://www.figma.com/proto/d0QNGuCARZaf7OgxDQrcc4/CASE-DIARY-AI-DESIGN--v1.0?page-id=0%3A1&node-id=3-195&viewport=279%2C260%2C0.08&t=X43gr95wKphSNHCa-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A195",
+    },
       {
         id: 1,
         title: "Duholiya – Assessment Management System",
