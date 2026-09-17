@@ -182,9 +182,13 @@ export const CaseStudies = () => {
                 </div>
 
                 <div className="flex flex-col">
-                    {[...caseStudies].reverse().slice(0, 4).map((study, index) => (
-                        <AnimatedProjectCard key={study.id} study={study} index={index} />
-                    ))}
+                    {[...caseStudies]
+                        .reverse()
+                        .filter((study) => !study.hideFromRecent)
+                        .slice(0, 4)
+                        .map((study, index) => (
+                            <AnimatedProjectCard key={study.id} study={study} index={index} />
+                        ))}
                 </div>
 
                 <motion.div

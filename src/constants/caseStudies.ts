@@ -49,6 +49,7 @@ export const caseStudies = [
     },
  
    
+/*
 {
     "id": 5,
     "title": "Meddical – Hospital Website Design",
@@ -61,6 +62,7 @@ export const caseStudies = [
     "colors": ["#1F2B6C", "#159EEC", "#E6F2FF"],
     "link": "https://www.figma.com/proto/FQ6zFPCVFlSLVzCy2O5iuO/MEDICAL---Hospital-website?node-id=147-1781&viewport=1549%2C871%2C0.23&t=K0mQmtMsr0W4FeoD-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=147%3A1781&page-id=147%3A1780"
 },
+*/
 {
     "id": 6,
     "title": "StackGuard – Cybersecurity Dashboard UI",
@@ -71,7 +73,8 @@ export const caseStudies = [
     "process": "Started with understanding SaaS dashboard patterns and cybersecurity workflows. Defined information hierarchy for key metrics like risk levels, alerts, compliance status, and system activity. Designed intuitive layouts with cards, charts, and tables for better data visualization. Focused on dark UI for a professional and tech-driven feel, ensuring readability, contrast, and smooth user navigation. Created consistent components, sidebar navigation, and modular sections for scalability.",
     "outcome": "Delivered a visually strong and user-friendly dashboard that simplifies complex security insights into actionable information. The design improves decision-making, enhances monitoring efficiency, and provides a scalable system for future feature expansion.",
     "colors": ["#0F172A", "#1E293B", "#3B82F6"],
-    "link": "https://www.figma.com/proto/9stZ7rgY8KIxnk8oZoRTZG/STACK-GUARD-DASHBOARD?node-id=1203-537"
+    "link": "https://www.figma.com/proto/9stZ7rgY8KIxnk8oZoRTZG/STACK-GUARD-DASHBOARD?node-id=1203-537",
+    "hideFromRecent": true
 },
    {
         id: 7,
