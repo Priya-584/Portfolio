@@ -1,6 +1,7 @@
 "use client";
 
 import { aboutData } from "@/constants/about";
+import { getAssetPath } from "@/utils/path";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import CountUp from "@/components/ui/CountUp";
@@ -58,7 +59,7 @@ export const About = () => {
                             {/* Use Next.js Image Component in production, but for now simple img for compatibility with generic setup */}
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                src={aboutData.image}
+                                src={getAssetPath(aboutData.image)}
                                 alt="Profile"
                                 className="object-cover w-full h-full opacity-100 group-hover:opacity-100 transition-opacity duration-500"
                             />

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { heroData } from "@/constants/hero";
+import { getAssetPath } from "@/utils/path";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import SplitText from "@/components/ui/SplitText";
@@ -53,7 +54,7 @@ export const Hero = () => {
                             {heroData.ctaPrimary}
                             <ArrowRight className="w-5 h-5" />
                         </Button>
-                        <Button href={heroData.ctaSecondary} variant="outline" target="_blank" rel="noopener noreferrer" isMagnetic={false} isAnimated={false}>
+                        <Button href={getAssetPath(heroData.ctaSecondary)} variant="outline" target="_blank" rel="noopener noreferrer" isMagnetic={false} isAnimated={false}>
                             Resume
                         </Button>
                     </div>
@@ -72,7 +73,7 @@ export const Hero = () => {
                                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 pointer-events-none z-10" />
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
-                                    src={heroData.profileImage}
+                                    src={getAssetPath(heroData.profileImage)}
                                     alt={heroData.title}
                                     className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-700"
                                 />

@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { Button } from "@/components/ui/Button";
 import GradientText from "@/components/ui/GradientText";
+import { getAssetPath } from "@/utils/path";
 
 const navLinks = [
     { name: "About", href: "/#about" },
@@ -60,7 +61,7 @@ export const Navbar = () => {
                     ))}
                     <ThemeToggle />
                     <Button
-                        href="/CV_UI-UX-Designer.pdf"
+                        href={getAssetPath("/CV_UI-UX-Designer.pdf")}
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="primary"
@@ -128,7 +129,7 @@ export const Navbar = () => {
                                 }}
                             >
                                 <Button
-                                    href="/CV_UI-UX-Designer.pdf"
+                                    href={getAssetPath("/CV_UI-UX-Designer.pdf")}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     variant="primary"

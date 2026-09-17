@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { caseStudies } from "@/constants/caseStudies";
+import { getAssetPath } from "@/utils/path";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import SplitText from "@/components/ui/SplitText";
@@ -21,7 +22,7 @@ const ProjectCard = ({ project, index }: { project: typeof caseStudies[0]; index
             <div className="relative aspect-video overflow-hidden rounded-3xl bg-secondary/30 border border-border/50 group-hover:border-primary/30 transition-all duration-500 shadow-xl">
                 {/* Image */}
                 <img
-                    src={project.image}
+                    src={getAssetPath(project.image)}
                     alt={project.title}
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />

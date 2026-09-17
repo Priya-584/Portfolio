@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import SplitText from "@/components/ui/SplitText";
 import { Instagram, TrendingUp, Users, Heart, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
+import { getAssetPath } from "@/utils/path";
 
 const AutoScrollGallery = ({ images, duration = 2000 }: { images: string[], duration?: number }) => {
     const [index, setIndex] = useState(0);
@@ -22,7 +23,7 @@ const AutoScrollGallery = ({ images, duration = 2000 }: { images: string[], dura
             <AnimatePresence mode="wait">
                 <motion.img
                     key={images[index]}
-                    src={images[index]}
+                    src={getAssetPath(images[index])}
                     alt={`Gallery image ${index + 1}`}
                     initial={{ opacity: 0, scale: 1.1, x: 20 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -127,7 +128,7 @@ export const SocialMedia = () => {
                             <div className="premium-border-container shadow-2xl shadow-primary/20 h-full">
                                 <div className="premium-border-content p-1 h-full">
                                     <video
-                                        src="/images/Techpyro Diwali vdo.mp4"
+                                        src={getAssetPath("/images/Techpyro Diwali vdo.mp4")}
                                         className="w-full h-full object-contain rounded-2xl"
                                         autoPlay
                                         loop

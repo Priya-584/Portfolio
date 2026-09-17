@@ -8,6 +8,7 @@ import { Section } from '@/components/ui/Section';
 import { PORTFOLIO_ITEMS, CATEGORIES } from '@/constants/logoPortfolio';
 import SplitText from '@/components/ui/SplitText';
 import { useEffect } from 'react';
+import { getAssetPath } from '@/utils/path';
 
 const CategoryIcon = ({ id }: { id: string }) => {
   switch (id) {
@@ -146,7 +147,7 @@ export const LogoPortfolio = () => {
                   <div className="w-full aspect-4/3 overflow-hidden">
                     {item.video ? (
                       <video
-                        src={item.video}
+                        src={getAssetPath(item.video)}
                         className="w-full h-full object-contain p-2"
                         autoPlay
                         loop
@@ -155,7 +156,7 @@ export const LogoPortfolio = () => {
                       />
                     ) : (
                       <img
-                        src={item.image}
+                        src={getAssetPath(item.image)}
                         alt={item.title}
                         className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110"
                       />
@@ -274,7 +275,7 @@ export const LogoPortfolio = () => {
               <div className="w-full lg:w-[60%] bg-black/40 flex items-center justify-center relative group/modal-img">
                 {selectedItem.video ? (
                   <video
-                    src={selectedItem.video}
+                    src={getAssetPath(selectedItem.video)}
                     className="max-w-full max-h-full p-4 md:p-8"
                     autoPlay
                     loop
@@ -283,7 +284,7 @@ export const LogoPortfolio = () => {
                   />
                 ) : (
                   <img
-                    src={selectedItem.image}
+                    src={getAssetPath(selectedItem.image)}
                     alt={selectedItem.title}
                     className="max-w-full max-h-full object-contain p-4 md:p-8"
                   />

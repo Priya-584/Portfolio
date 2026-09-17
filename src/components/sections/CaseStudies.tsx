@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { caseStudies } from "@/constants/caseStudies";
+import { getAssetPath } from "@/utils/path";
 import { Container } from "@/components/ui/Container";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
@@ -50,7 +51,7 @@ const AnimatedProjectCard = ({ study, index }: { study: typeof caseStudies[0]; i
                             {/* Image */}
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                src={study.image}
+                                src={getAssetPath(study.image)}
                                 alt={study.title}
                                 className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
                             />
