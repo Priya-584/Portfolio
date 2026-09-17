@@ -18,15 +18,27 @@ const CategoryIcon = ({ id }: { id: string }) => {
   }
 };
 
+// Deterministic pseudo-random shuffle to ensure SSR and client hydration produce identical DOM trees
+const getDeterministicShuffledItems = (items: typeof PORTFOLIO_ITEMS) => {
+  const arr = [...items];
+  let seed = 42;
+  const random = () => {
+    seed = (seed * 1664525 + 1013904223) % 4294967296;
+    return seed / 4294967296;
+  };
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+
+const SHUFFLED_PORTFOLIO_ITEMS = getDeterministicShuffledItems(PORTFOLIO_ITEMS);
+
 export const LogoPortfolio = () => {
   const [filter, setFilter] = useState('all');
   const [selectedItem, setSelectedItem] = useState<(typeof PORTFOLIO_ITEMS)[0] | null>(null);
   const [visibleCount, setVisibleCount] = useState(9);
-  
-  // Create a randomized version of the portfolio items once on mount
-  const randomizedItems = useMemo(() => {
-    return [...PORTFOLIO_ITEMS].sort(() => Math.random() - 0.5);
-  }, []);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -41,13 +53,13 @@ export const LogoPortfolio = () => {
   }, [selectedItem]);
 
   const filteredItems = useMemo(() => {
-    // If "all" is selected, use the randomized list. Otherwise, filter from the original list.
-    const baseItems = filter === 'all' ? randomizedItems : PORTFOLIO_ITEMS;
+    // If "all" is selected, use the deterministically shuffled list. Otherwise, filter from the original list.
+    const baseItems = filter === 'all' ? SHUFFLED_PORTFOLIO_ITEMS : PORTFOLIO_ITEMS;
     return baseItems.filter(item => {
       const matchesFilter = filter === 'all' || item.category === filter;
       return matchesFilter;
     });
-  }, [filter, randomizedItems]);
+  }, [filter]);
 
   const visibleItems = useMemo(() => {
     return filteredItems.slice(0, visibleCount);

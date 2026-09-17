@@ -1,20 +1,4 @@
 export const caseStudies = [
-          {
-      id: 9,
-      title: "CaseDiary AI",
-      category: "AI / SaaS / Product Design",
-      image: "/images/casediary.png",
-      problem:
-        "Police officers often have to deal with repetitive documentation, formatting, and case-related records. The challenge was to make these everyday tasks simpler without making the product feel complicated.",
-      goal:
-        "Create a clear and structured digital experience that helps officers manage case documentation, create documents, use voice input, review case work, and export files with less effort.",
-      process:
-        "Started by understanding the documentation workflow and identifying the key tasks officers need to perform regularly. Designed the information architecture, user flows, wireframes, and UI system, then refined the experience around Case Diary, Voice AI, Document Editor, Samiksha, and PDF workflows.",
-      outcome:
-        "Created a focused product experience that brings multiple documentation workflows together in one place, making the overall process more structured, clear, and easier to navigate.",
-      colors: ["#F97316", "#EA580C", "#FFF7ED"],
-      link: "https://www.figma.com/proto/d0QNGuCARZaf7OgxDQrcc4/CASE-DIARY-AI-DESIGN--v1.0?page-id=0%3A1&node-id=3-195&viewport=279%2C260%2C0.08&t=X43gr95wKphSNHCa-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A195",
-    },
       {
         id: 1,
         title: "Duholiya – Assessment Management System",
@@ -101,18 +85,34 @@ export const caseStudies = [
         colors: ["#1E293B", "#3B82F6", "#10B981"],
         link: "https://www.figma.com/proto/wCQN7wDDzmPXQmjXVxDglE/EduRuby?page-id=109%3A1279&node-id=109-1280&viewport=-799%2C428%2C0.09&t=G07TBkIBeAL3cYTH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=132%3A3597"
     }, 
- {
-  id: 8,
-  title: "Birthday Vibe Match",
-  category: "Social / Matching / Web & Mobile",
-  image: "/images/Vibee-natch.png",
-  problem: "Designed a complete birthday-based social matching platform where users can discover connections through vibe matching, aura decoding, zodiac-based compatibility, and interactive conversation experiences. Created end-to-end flows for website and mobile including landing match sections, match selection journey, prediction-style loading experience, profile exploration, vibe percentage reveal, decode aura interaction, chat system, private insights, and responsive sidebar navigation. Built a modern blue and dark themed UI focused on emotional engagement, premium interaction design, and high-retention social experience.",
-  goal: "Create a futuristic and engaging matching experience where users can form meaningful connections through birthdays, vibe compatibility, aura insights, and social interaction across responsive web and mobile platforms.",
-  process: "Started by defining the core concept around birthday-based matching and emotional compatibility. Designed the main 'Find Your Match' section with dynamic profile presentation and strong call-to-action flow. Extended the journey into a dedicated match selection screen where users can choose match types such as random match, celebrity match, same birthday match, and zodiac match through an interactive bottom sheet. Added a cinematic future-prediction style transition to make the matching process feel immersive and exciting. Designed detailed profile experiences for both self-view and other-user view, including private match count, vibe match percentage, aura decode entry point, connections, posts, vibe history, and personalized recommendations. Planned a responsive chat interface with advanced filters, conversation list, full chat panel, calling actions, moderation controls, and modern blue-dark styling. Also structured a modern mobile sidebar with clean navigation, profile access, secondary tools, and account controls to maintain usability on smaller screens.",
-  outcome: "Created a strong product direction for a unique social matching platform that blends astrology-inspired interactions, personality discovery, and modern communication features. The final concept delivers a premium user experience with immersive transitions, responsive layouts, emotional engagement hooks, and a scalable feature foundation for both website and mobile application design.",
-  colors: ["#0F172A", "#1D4ED8", "#38BDF8"],
-  link: "https://www.figma.com/proto/HfhAwQ6EV5x7WzrYKnd9Dq/Birthday-Project?page-id=44%3A451&node-id=531-2016&viewport=4183%2C11797%2C0.99&t=iOn0TBpfvV4wIg5F-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=531%3A2016"
-},
+  {
+    id: 8,
+    title: "Birthday Vibe Match",
+    category: "Social / Matching / Web & Mobile",
+    image: "/images/Vibee-natch.png",
+    problem: "Designed a complete birthday-based social matching platform where users can discover connections through vibe matching, aura decoding, zodiac-based compatibility, and interactive conversation experiences. Created end-to-end flows for website and mobile including landing match sections, match selection journey, prediction-style loading experience, profile exploration, vibe percentage reveal, decode aura interaction, chat system, private insights, and responsive sidebar navigation. Built a modern blue and dark themed UI focused on emotional engagement, premium interaction design, and high-retention social experience.",
+    goal: "Create a futuristic and engaging matching experience where users can form meaningful connections through birthdays, vibe compatibility, aura insights, and social interaction across responsive web and mobile platforms.",
+    process: "Started by defining the core concept around birthday-based matching and emotional compatibility. Designed the main 'Find Your Match' section with dynamic profile presentation and strong call-to-action flow. Extended the journey into a dedicated match selection screen where users can choose match types such as random match, celebrity match, same birthday match, and zodiac match through an interactive bottom sheet. Added a cinematic future-prediction style transition to make the matching process feel immersive and exciting. Designed detailed profile experiences for both self-view and other-user view, including private match count, vibe match percentage, aura decode entry point, connections, posts, vibe history, and personalized recommendations. Planned a responsive chat interface with advanced filters, conversation list, full chat panel, calling actions, moderation controls, and modern blue-dark styling. Also structured a modern mobile sidebar with clean navigation, profile access, secondary tools, and account controls to maintain usability on smaller screens.",
+    outcome: "Created a strong product direction for a unique social matching platform that blends astrology-inspired interactions, personality discovery, and modern communication features. The final concept delivers a premium user experience with immersive transitions, responsive layouts, emotional engagement hooks, and a scalable feature foundation for both website and mobile application design.",
+    colors: ["#0F172A", "#1D4ED8", "#38BDF8"],
+    link: "https://www.figma.com/proto/HfhAwQ6EV5x7WzrYKnd9Dq/Birthday-Project?page-id=44%3A451&node-id=531-2016&viewport=4183%2C11797%2C0.99&t=iOn0TBpfvV4wIg5F-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=531%3A2016"
+  },
+  {
+    id: 9,
+    title: "CaseDiary AI",
+    category: "AI / SaaS / Product Design",
+    image: "/images/casediary.jpg",
+    problem:
+      "Police officers often have to deal with repetitive documentation, formatting, and case-related records. The challenge was to make these everyday tasks simpler without making the product feel complicated.",
+    goal:
+      "Create a clear and structured digital experience that helps officers manage case documentation, create documents, use voice input, review case work, and export files with less effort.",
+    process:
+      "Started by understanding the documentation workflow and identifying the key tasks officers need to perform regularly. Designed the information architecture, user flows, wireframes, and UI system, then refined the experience around Case Diary, Voice AI, Document Editor, Samiksha, and PDF workflows.",
+    outcome:
+      "Created a focused product experience that brings multiple documentation workflows together in one place, making the overall process more structured, clear, and easier to navigate.",
+    colors: ["#F97316", "#EA580C", "#FFF7ED"],
+    link: "https://www.figma.com/proto/d0QNGuCARZaf7OgxDQrcc4/CASE-DIARY-AI-DESIGN--v1.0?page-id=0%3A1&node-id=3-195&viewport=279%2C260%2C0.08&t=X43gr95wKphSNHCa-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A195",
+  }
 ];
 
 
