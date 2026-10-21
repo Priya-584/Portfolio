@@ -10,7 +10,7 @@
 ## 🌐 Live Website
 
 Explore the live portfolio and interactive prototypes:  
-👉 [🌐 Visit My Portfolio](https://portfolio-eight-liard-97.vercel.app/)
+👉 [🌐 Visit My Portfolio](https://priya-584.github.io/Portfolio/)
 
 ---
 
