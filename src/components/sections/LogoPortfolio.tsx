@@ -39,7 +39,7 @@ const SHUFFLED_PORTFOLIO_ITEMS = getDeterministicShuffledItems(PORTFOLIO_ITEMS);
 export const LogoPortfolio = () => {
   const [filter, setFilter] = useState('all');
   const [selectedItem, setSelectedItem] = useState<(typeof PORTFOLIO_ITEMS)[0] | null>(null);
-  const [visibleCount, setVisibleCount] = useState(9);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -228,7 +228,7 @@ export const LogoPortfolio = () => {
             className="flex justify-center mt-16"
           >
             <button
-              onClick={() => setVisibleCount(prev => prev + 9)}
+              onClick={() => setVisibleCount(prev => prev + 8)}
               className="group flex flex-col items-center gap-4 transition-all hover:-translate-y-1"
             >
               <div className="flex items-center gap-2 px-8 py-4 bg-secondary/50 backdrop-blur-md border border-border/50 rounded-full font-bold text-foreground hover:bg-primary hover:text-white hover:border-primary shadow-sm hover:shadow-xl transition-all">

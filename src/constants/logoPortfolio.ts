@@ -2,10 +2,113 @@ export const CATEGORIES = [
   { id: 'all', label: 'All Work' },
   { id: 'logo', label: 'Logos' },
   { id: 'mockup', label: 'Mockups' },
-  { id: 'invitation', label: 'Poster' },
+  { id: 'invitation', label: 'Posters & Cards' },
 ];
 
 export const PORTFOLIO_ITEMS = [
+  // --- Featured Recent Works (2026) ---
+  {
+    id: 15,
+    title: "CaseDairy AI Identity",
+    category: "logo",
+    image: "/images/casediaryai-logo.jpeg",
+    description: "Official brand emblem for CaseDairy AI (A PAMYN Product), featuring a sacred sunburst seal with legal documentation and audio waveform motifs.",
+    tags: ["Legal AI", "Emblem", "Branding"],
+    client: "PAMYN / CaseDairy AI",
+    year: "2026"
+  },
+  {
+    id: 16,
+    title: "CaseDairy AI Brand Mockup",
+    category: "mockup",
+    image: "/images/casediaryAi-mockup.jpeg",
+    description: "Comprehensive corporate brand presentation including 3D illuminated reception wall signage, luxury stationery, notebook, ceramic mug, and mobile application icon.",
+    tags: ["3D Wall", "Stationery", "Corporate"],
+    client: "PAMYN / CaseDairy AI",
+    year: "2026"
+  },
+  {
+    id: 17,
+    title: "DoctorDiary AI Brand Identity",
+    category: "logo",
+    image: "/images/drdiaryai-logo.jpeg",
+    description: "Modern healthcare AI branding featuring an active ECG heartbeat pulse wave seamlessly integrated into the custom DD monogram with clean typography.",
+    tags: ["Healthcare", "Pulse Wave", "Monogram"],
+    client: "DoctorDiary AI",
+    year: "2026"
+  },
+  {
+    id: 18,
+    title: "DoctorDiary AI App Icon",
+    category: "logo",
+    image: "/images/doctor - 1000.png",
+    description: "Sleek iOS and Android app icon design featuring a minimalist doctor silhouette with stethoscope and medical cross in a vibrant blue squircle.",
+    tags: ["App Icon", "Medical", "UI Icon"],
+    client: "DoctorDiary AI",
+    year: "2026"
+  },
+  {
+    id: 19,
+    title: "Smart Clinic 3D App Icon & Logo",
+    category: "logo",
+    image: "/images/clinic - 1000.png",
+    description: "Detailed 3D architectural clinic brand icon and app logo featuring glass entrance doors, ambient interior glow, medical cross emblem, and stylized foliage.",
+    tags: ["3D Logo", "App Icon", "Healthcare"],
+    client: "ClinicCare",
+    year: "2026"
+  },
+  {
+    id: 20,
+    title: "ossfind Developer Identity",
+    category: "logo",
+    image: "/images/ossFind-logo.jpeg",
+    description: "Modern tech logo for open-source project discovery platform by PAMYN, combining search magnifying glass symbolism with digital pixels and organic leaf motif.",
+    tags: ["Open Source", "Tech", "Minimal"],
+    client: "PAMYN / ossfind",
+    year: "2026"
+  },
+  {
+    id: 21,
+    title: "ossfind Office & UI Showcase",
+    category: "mockup",
+    image: "/images/ossFind-mockup.jpeg",
+    description: "Multi-surface brand presentation displaying illuminated 3D office lobby sign, acrylic glass door plaque, business cards, laptop web UI, and mobile app interface.",
+    tags: ["Office Wall", "Web UI", "Stationery"],
+    client: "PAMYN / ossfind",
+    year: "2026"
+  },
+  {
+    id: 22,
+    title: "WaynVibe Luxury Identity",
+    category: "logo",
+    image: "/images/waynVibe-logo.jpeg",
+    description: "Ultra-premium metallic gold ribbon monogram with sparkling star emblem and high-contrast serif typography for luxury experiences.",
+    tags: ["Luxury", "Gold Foil", "Typography"],
+    client: "WaynVibe",
+    year: "2026"
+  },
+  {
+    id: 23,
+    title: "WaynVibe Luxury Mockup Suite",
+    category: "mockup",
+    image: "/images/waynVibe-mockups.jpeg",
+    description: "Exquisite brand identity showcase featuring warm backlit 3D signage, gold-embossed matte black cards, canvas tote bag, outdoor blade sign, and mobile UI.",
+    tags: ["Luxury Mockup", "Gold Signage", "Merchandise"],
+    client: "WaynVibe",
+    year: "2026"
+  },
+  {
+    id: 24,
+    title: "Grih Pujan Auspicious Poster",
+    category: "invitation",
+    image: "/images/poster.jpeg",
+    description: "Traditional Indian Grih Pujan (Housewarming) ceremonial invitation poster designed with sacred auspicious motifs, Lord Ganesha illustration, Kalash, banana trees, and floral toran.",
+    tags: ["Ceremony", "Poster", "Traditional"],
+    client: "Belwal Family",
+    year: "2026"
+  },
+
+  // --- Established Portfolio Works ---
   {
     id: 1,
     title: "TechPyro Brand Identity",
@@ -137,7 +240,7 @@ export const PORTFOLIO_ITEMS = [
     client: "Snackify",
     year: "2026"
   },
-   {
+  {
     id: 14,
     title: "Saaz Drop – Rice Bran Oil Packaging",
     category: "mockup",
