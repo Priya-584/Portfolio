@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="designGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="32" height="32" rx="6" fill="url(#designGradient)"/>
+
+  <!-- Design compass/crosshair -->
+  <g transform="translate(16,16)">
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="1.5" fill="#ffffff"/>
+
+    <!-- Horizontal line -->
+    <rect x="-8" y="-0.5" width="16" height="1" fill="url(#accentGradient)" rx="0.5"/>
+    <!-- Vertical line -->
+    <rect x="-0.5" y="-8" width="1" height="16" fill="url(#accentGradient)" rx="0.5"/>
+
+    <!-- Corner accents -->
+    <circle cx="-6" cy="-6" r="1" fill="#ffffff" opacity="0.8"/>
+    <circle cx="6" cy="-6" r="1" fill="#ffffff" opacity="0.8"/>
+    <circle cx="-6" cy="6" r="1" fill="#ffffff" opacity="0.8"/>
+    <circle cx="6" cy="6" r="1" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <!-- Subtle border -->
+  <rect x="0.5" y="0.5" width="31" height="31" rx="5.5" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+</svg>
