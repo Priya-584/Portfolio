@@ -38,23 +38,33 @@ export const PORTFOLIO_ITEMS = [
     year: "2026"
   },
   {
+    id: 25,
+    title: "Contractor Diary Brand Identity",
+    category: "logo",
+    image: "/images/contractorDiary.jpeg",
+    description: "Distinctive logo design for Contractor Diary, combining construction crane, building architecture, and diary journal symbolism tailored for civil contractors and project tracking.",
+    tags: ["Construction", "Contractor", "Branding"],
+    client: "Contractor Diary",
+    year: "2026"
+  },
+  {
     id: 18,
-    title: "DoctorDiary AI App Icon",
+    title: "Medicseva Doctor App Icon",
     category: "logo",
     image: "/images/doctor - 1000.png",
-    description: "Sleek iOS and Android app icon design featuring a minimalist doctor silhouette with stethoscope and medical cross in a vibrant blue squircle.",
-    tags: ["App Icon", "Medical", "UI Icon"],
-    client: "DoctorDiary AI",
+    description: "Sleek iOS and Android app icon design for Medicseva, featuring a minimalist doctor silhouette with stethoscope and medical cross in a vibrant blue squircle.",
+    tags: ["Medicseva", "App Icon", "Medical"],
+    client: "Medicseva",
     year: "2026"
   },
   {
     id: 19,
-    title: "Smart Clinic 3D App Icon & Logo",
+    title: "Medicseva Clinic 3D App Icon",
     category: "logo",
     image: "/images/clinic - 1000.png",
-    description: "Detailed 3D architectural clinic brand icon and app logo featuring glass entrance doors, ambient interior glow, medical cross emblem, and stylized foliage.",
-    tags: ["3D Logo", "App Icon", "Healthcare"],
-    client: "ClinicCare",
+    description: "Detailed 3D architectural clinic brand icon and app logo for Medicseva, featuring glass entrance doors, ambient interior glow, medical cross emblem, and stylized foliage.",
+    tags: ["Medicseva", "3D Logo", "Healthcare"],
+    client: "Medicseva",
     year: "2026"
   },
   {
@@ -95,6 +105,16 @@ export const PORTFOLIO_ITEMS = [
     description: "Exquisite brand identity showcase featuring warm backlit 3D signage, gold-embossed matte black cards, canvas tote bag, outdoor blade sign, and mobile UI.",
     tags: ["Luxury Mockup", "Gold Signage", "Merchandise"],
     client: "WaynVibe",
+    year: "2026"
+  },
+  {
+    id: 26,
+    title: "Pamyn Signage",
+    category: "mockup",
+    image: "/images/pamyn-banner.jpeg",
+    description: "Official corporate outdoor office board and identity signage for PAMYN LLP, featuring the brand tree emblem, registered office address, CIN, and GSTIN specifications.",
+    tags: ["Signage", "Corporate", "Branding"],
+    client: "PAMYN LLP",
     year: "2026"
   },
   {
